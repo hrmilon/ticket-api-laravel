@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Policies\V1;
+
+use App\Models\Ticket;
+use App\Models\User;
+use App\Permissions\V1\Abilites;
+use App\Permissions\V1\Abilities;
+
+class TicketPolicy
+{
+
+    public function store(User $user): bool
+    {
+        return $user->tokenCan(Abilities::CreateTicket) ||
+            $user->tokenCan(Abilities::CreateOwnTicket);
+    }
+
+
+    public function update(User $user, Ticket $ticket): bool
+    {
+
+        if ($user->tokenCan(Abilities::UpdateTicket)) {
+            return true;
+        } else {
+            return $user->id === $ticket->user_id;
+        }
+
+        return false;
+    }
+
+
+
+    public function delete(User $user, Ticket $ticket): bool
+    {
+        if ($user->tokenCan(Abilities::UpdateTicket)) {
+            return true;
+        } else if ($user->tokenCan(Abilities::DeleteOwnTicket)) {
+            return $user->id === $ticket->user_id;
+        }
+
+        return false;
+    }
+
+
+//replace policy
+    public function replace(User $user, Ticket $ticket): bool
+    {
+        return $user->tokenCan(Abilities::ReplaceTicket);
+    }
+}
