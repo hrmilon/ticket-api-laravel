@@ -20,15 +20,16 @@ class DatabaseSeeder extends Seeder
             ->recycle($user)
             ->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
         User::create([
             'email' => 'manager@abc.com',
             'password' => bcrypt('password'),
             'name' => "Manager",
             'is_manager' => true
         ]);
+
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }
