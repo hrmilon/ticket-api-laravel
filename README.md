@@ -1,9 +1,24 @@
-### Ticket api
+### Support Ticket System api
+
+### Startup Instruction
+- php aritsan migrate:fresh --seed [Seeding the db]
+- hit login 📮POST /api/login to generate a token
+- use the token as bearar token to serve throughout application
+
+### Filtering Details(custom)
+- Sort by Status `/tickets?status=X`
+- More {implemented but not documented till now}
 
 
 ## API Endpoints
 
 ### Ticket Endpoints
+
+**use v1 prefix for each endpoints
+like: /api/v1/tickets
+except: login and logout route
+**
+
 
 #### GET /api/tickets 🔒
 - **Description**: List all tickets
