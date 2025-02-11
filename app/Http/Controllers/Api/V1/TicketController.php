@@ -22,7 +22,7 @@ class TicketController extends ApiController
      */
     public function index(TicketFilter $filters)
     {
-        return TicketResource::collection(Ticket::filter($filters)->paginate());
+        return TicketResource::collection(Ticket::filter($filters)->paginate());        
     }
 
     /**
@@ -33,8 +33,8 @@ class TicketController extends ApiController
 
         if ($this->isAble('store', Ticket::class)) {
             return new TicketResource(Ticket::create($request->mappedAttributes()));
-            return $this->notAuthorized("you're not authorized to create the resource");
         }
+        return $this->notAuthorized("you're not authorized to create the resource");
     }
 
     /**
