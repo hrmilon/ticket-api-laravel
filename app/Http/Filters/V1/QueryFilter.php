@@ -29,7 +29,8 @@ class QueryFilter
         return $builder;
     }
 
-    //endpoint ?filter[status]=text
+    //endpoint ?filter[status]=text   
+    //by default called this method from controller
     protected function filter($arr)
     {
         foreach ($arr as $key => $value) {

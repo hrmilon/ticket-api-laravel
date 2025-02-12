@@ -33,9 +33,8 @@ class TicketController extends ApiController
 
         if ($this->isAble('store', Ticket::class)) {
             return new TicketResource(Ticket::create($request->mappedAttributes()));
-          
-        } 
-         return $this->notAuthorized("you're not authorized to create the resource");
+        }
+        return $this->notAuthorized("you're not authorized to create the resource");
     }
 
     /**

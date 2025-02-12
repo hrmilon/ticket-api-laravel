@@ -28,7 +28,5 @@ return Application::configure(basePath: dirname(__DIR__))
             //functionality for handling exception
             $instance = new CustomRender();
             return $instance->exceptionRender($exception);
-
-            
         });
     })->create();

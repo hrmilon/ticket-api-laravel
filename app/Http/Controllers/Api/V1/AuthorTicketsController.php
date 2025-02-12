@@ -62,7 +62,6 @@ class AuthorTicketsController extends ApiController
                 ->firstOrFail();
 
             return new TicketResource($ticket);
-
         } catch (ModelNotFoundException $th) {
             return $this->ok("Ticket doesn't exist", 400);
         } catch (AuthorizationException $error) {

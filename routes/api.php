@@ -17,4 +17,4 @@ Route::get('/user', function (Request $request) {
 
 
 //for testing various things
-Route::get('/test', TestController::class);
+// Route::get('/test', TestController::class);
