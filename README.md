@@ -6,11 +6,12 @@
 - use the token as bearar token to serve throughout application
 
 ### Filtering Details(custom)
-Sort : Data field(s) to sort by. Separate multiple fields with commas. Denote descending sort with a minus sign.
-`sort=title,-createdAt`
-Filter : Filter by status code: A, C, H, X.
-`filter[status]`, `filter[title]`
-- 
+
+- Sort : Data field(s) to sort by. Separate multiple fields with commas. Denote descending sort with a minus sign.
+- `sort=title,-createdAt`
+
+- Filter : Filter by status code: A, C, H, X.
+- `filter[status]`, `filter[title]`
 
 ## API Endpoints
 
