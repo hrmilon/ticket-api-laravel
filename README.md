@@ -9,6 +9,18 @@
 - Sort by Status `/tickets?status=X`
 - More {implemented but not documented till now}
 
+### Startup Instruction
+- php aritsan migrate:fresh --seed [Seeding the db]
+- hit login 📮POST /api/login to generate a token
+- use the token as bearar token to serve throughout application
+
+### Filtering Details(custom)
+
+- Sort : Data field(s) to sort by. Separate multiple fields with commas. Denote descending sort with a minus sign.
+- `sort=title,-createdAt`
+
+- Filter : Filter by status code: A, C, H, X.
+- `filter[status]`, `filter[title]`
 
 ## API Endpoints
 

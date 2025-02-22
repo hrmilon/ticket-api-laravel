@@ -41,7 +41,7 @@ class Handler extends ExceptionHandler
                 'status' => 0,
                 'message' => $exception->getMessage(),
                 'source' => 'Line' . $exception->getLine() . ": " . $exception->getFile(),
-                'hello' => "okkkkkk"
+                'test' => "working error exception"
             ]
         ]);
     }
